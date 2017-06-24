@@ -99,5 +99,4 @@ ENV/
 
 # mypy
 .mypy_cache/
-Supprimerait .idea/
-Supprimerait TP1/
+.idea/

@@ -41,9 +41,9 @@ def naive_random_selector(rows, k, size):
 def kmeans(Bdd, table, element, k):
     print("Start k-means of ", k, " clusters")
     rows = Bdd.select_all(table)
-    # centroids = [getattr(c, element) for c in sample(iter(list(rows)), k)]
     print("Choose random points to start with")
-    centroids = [getattr(c, element) for c in naive_random_selector(rows, 5, 1000)]
+    centroids = [getattr(c, element) for c in sample(iter(list(rows)), k)]
+    # centroids = [getattr(c, element) for c in naive_random_selector(rows, 5, 1000)]
     count = 0
     while True:
         print("Iteration ", count)
