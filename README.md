@@ -26,10 +26,10 @@ Le fichier est composé de différents attributs :
 | POLYLINE | Coordonnées du trajet |
 
 Les données sont entrée de façon à pouvoir répondre aux questions suivantes :
--Quels sont les taxis les plus pris ?
--Quels sont les types d'appels les plus courants ?
--A quel endroit sollicitons-nous le plus de taxis ? 
--A quelle date/type de jour les taxis sont-ils le plus sollicités ? 
+- Quels sont les taxis les plus pris ?
+- Quels sont les types d'appels les plus courants ?
+- À quel endroit sollicitons-nous le plus de taxis ? 
+- À quelle date/type de jour les taxis sont-ils le plus sollicités ? 
 
 La manière choisie de répondre à ces questions viendra avec la description des fichiers.
 
@@ -105,3 +105,13 @@ Regardons l'emplacement de ces clusters sur une carte :
 ![](porto_map.png?raw=true)
 
 On voit ici des clusters plutôt cohérents : un à l'aéroport, et trois autres équilibrés dans le centre ville. A noter qu'il y a un cinquième cluster, très éloigné de la ville. On peut supposer qu'il s'agit de très long trajet en taxis que l'algorithme aura réuni.
+
+### Fichiers
+
+Enfin, regardons plus en détail les différents fichier, l'architecture du code :
+- analyze.py : Contient les interrogations de la BDD
+- database.py : Contient une surcouche pour encapsuler la connexion
+- handle_file.py : Contient les fonctions d'insertion du fichier
+- kmeans.py : Contient l'implémentation de l'algorithme des kmeans
+- main.py : Fichier utilisé pour interroger les autres fonctions
+- tools.py : Contient les fonctions outils, notamment la fonction de création de table et de calcul de distance 
