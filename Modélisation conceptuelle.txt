@@ -1,0 +1,14 @@
+Grain : 1 trajet
+Entité :
+Le taxi
+Date (type de jour et jour)
+Appel
+Trajet
+
+Quels sont les taxis les plus pris ? Quels sont les appels les plus courants ? A quel endroit sollicitons-nous le plus de taxis ? 
+A quelle date/type de jour les taxis sont-ils le plus sollicités ?
+
+Dimension Taxi(chauffeur) : TAXI_ID
+Dimension Demande : CALL_TYPE ORIGIN_CALL ORIGIN_STAND
+Dimension Date : TIMESTAMP DAY_TYPE Jour mois heure type de jour
+Dimension Trajet : STARTPOINT, ENDPOINT, POLYLINE

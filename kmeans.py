@@ -39,7 +39,7 @@ def naive_random_selector(rows, k, size):
 
 
 def kmeans(Bdd, table, element, k):
-    print("Start k-means of ", k, " iterations")
+    print("Start k-means of ", k, " clusters")
     rows = Bdd.select_all(table)
     # centroids = [getattr(c, element) for c in sample(iter(list(rows)), k)]
     print("Choose random points to start with")
@@ -68,5 +68,5 @@ def one_iter_kmean(rows, attr, k, centroids, limit=None):
             summary_centroids[k][1] = add_tuple(summary_centroids[k][1], elem)
             if count == limit:
                 break
-    print(summary_centroids)
+    print("Current centroids ", summary_centroids)
     return [div_tuple(s[1], s[0]) for s in summary_centroids]

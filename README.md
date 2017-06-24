@@ -12,6 +12,7 @@ Le projet est réalisé entièrement en Python 3, et utilise les libraries Arrow
 ## Traitement du fichier en entrée
 
 Le fichier est composé de différents attributs :
+
 | Variable  | Description |
 | ------------- | ------------- |
 | TRIP_ID  | Descripteur unique du trajet  |
@@ -50,6 +51,37 @@ Il est ainsi possible de les croiser afin de répondre à des requêtes du type 
 
 L'analyse se déroule en plusieurs parties. Tout d'abord, l'interrogation directe des tables fourni, du fait de leur structure la réponse à la plupart des questions.
 Ensuite, on peut réaliser une analyse plus poussée. Ici a été réimplémenté une version de l'algorithme des kmeans. Nous l'utilisons ici pour retrouver les différents "spots" du jeu de données. 
-Cela correspond par exemple à des endroits intéressants pour implémenter un dépôt de taxi. L'implémentation fournie ici permet également de le faire fonctionner sur les distances, pour retrouver une classificationd des k premières distances moyennes.
+Cela correspond par exemple à des endroits intéressants pour implémenter un dépôt de taxi. L'implémentation fournie ici permet également de le faire fonctionner sur les distances, pour retrouver une classification des k premières distances moyennes.
+On obtient ainsi des informations permettant de dimensionner les taxis choisis.
+
+### Exemples
+
+La fonction answer renvoie les résultats d'une liste de requêtes.
+```python
+answer(bdd)
+> Top 10 taxis
+> Row(taxi_id='20000080', count=10731)
+> Row(taxi_id='20000403', count=9237)
+> Row(taxi_id='20000066', count=8443)
+> Row(taxi_id='20000364', count=7821)
+> Row(taxi_id='20000483', count=7729)
+> Row(taxi_id='20000129', count=7608)
+> Row(taxi_id='20000307', count=7497)
+> Row(taxi_id='20000621', count=7276)
+> Row(taxi_id='20000089', count=7266)
+> Row(taxi_id='20000424', count=7176)
+> Distance moyenne d'un trajet 
+> 6449.949653598848
+> Quel sont les types de jours les plus sollicités ?
+> A
+> Quelle est la journée la plus sollicitée de l'année ?
+> Row(year=2014, month=1, day=1, count=7493)
+
+```
+Nous appelons cette fois-ci la fonction kmeans, sur le tuple de coordonnées d'arrivée. Cela nous permet entre autre de savoir quels sont les points d'arrivée des taxis.
+
+```python
+
+```
 
 

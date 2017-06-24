@@ -14,7 +14,7 @@ def main():
     #handle_file.file_insertion_handler(Bdd)
     x = kmeans(bdd, "facts","end", 5)
     print(x)
-    # answer(bdd)
+    answer(bdd)
     bdd.disconnect()
 
 

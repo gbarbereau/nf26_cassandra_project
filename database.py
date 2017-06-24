@@ -80,6 +80,8 @@ class Bdd:
         self.execute(query)
 
     def selection_grouped(self, table, attribute, operation, limit=None):
+        if isinstance(attribute,list):
+            attribute = ", ".join(attribute)
         query = "SELECT %s, %s(*) FROM %s GROUP BY %s" % (
         attribute, operation, table, attribute)
         if limit:
